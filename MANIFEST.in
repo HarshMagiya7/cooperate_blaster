@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include cooperate_blaster *.css
+recursive-include cooperate_blaster *.csv
+recursive-include cooperate_blaster *.html
+recursive-include cooperate_blaster *.ico
+recursive-include cooperate_blaster *.js
+recursive-include cooperate_blaster *.json
+recursive-include cooperate_blaster *.md
+recursive-include cooperate_blaster *.png
+recursive-include cooperate_blaster *.py
+recursive-include cooperate_blaster *.svg
+recursive-include cooperate_blaster *.txt
+recursive-exclude cooperate_blaster *.pyc
