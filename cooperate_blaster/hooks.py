@@ -11,11 +11,12 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/cooperate_blaster/css/cooperate_blaster.css"
+
+#app_include_css = "/assets/cooperate_blaster/css/novacept.css"
 # app_include_js = "/assets/cooperate_blaster/js/cooperate_blaster.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/cooperate_blaster/css/cooperate_blaster.css"
+#web_include_css = "/assets/cooperate_blaster/css/login.css"
 # web_include_js = "/assets/cooperate_blaster/js/cooperate_blaster.js"
 
 # include custom scss in every website theme (without file extension ".scss")
@@ -113,9 +114,9 @@ app_license = "MIT"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-#	"all": [
-#		"cooperate_blaster.tasks.all"
+scheduler_events = {
+	"all": [
+		"cooperate_blaster.cooperate_blaster.doctype.social_post.social_post.process_scheduled_social_media_posts"
 #	],
 #	"daily": [
 #		"cooperate_blaster.tasks.daily"
@@ -128,8 +129,8 @@ app_license = "MIT"
 #	],
 #	"monthly": [
 #		"cooperate_blaster.tasks.monthly"
-#	],
-# }
+	],
+}
 
 # Testing
 # -------

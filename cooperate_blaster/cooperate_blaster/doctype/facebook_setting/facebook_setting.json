@@ -1,0 +1,121 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:page_name",
+ "creation": "2022-06-20 19:29:34.614384",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "account_name",
+  "page_details",
+  "page_name",
+  "page_id",
+  "column_break_5",
+  "short_lived_access_token",
+  "app_detail",
+  "app_id",
+  "column_break_9",
+  "app_secret",
+  "long_lived_access_token",
+  "session_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_name",
+   "fieldtype": "Data",
+   "label": "Account Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "page_details",
+   "fieldtype": "Section Break",
+   "label": "Page info"
+  },
+  {
+   "fieldname": "page_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Page name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "page_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Page ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "short_lived_access_token",
+   "fieldtype": "Small Text",
+   "label": "Page Access token",
+   "reqd": 1
+  },
+  {
+   "fieldname": "app_detail",
+   "fieldtype": "Section Break",
+   "label": "APP detail"
+  },
+  {
+   "fieldname": "app_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "App ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "app_secret",
+   "fieldtype": "Password",
+   "label": "App secret",
+   "reqd": 1
+  },
+  {
+   "fieldname": "long_lived_access_token",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Permanent token"
+  },
+  {
+   "fieldname": "session_status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Session Status",
+   "options": "Expired\nActive",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-11-21 14:57:23.923725",
+ "modified_by": "Administrator",
+ "module": "Cooperate Blaster",
+ "name": "Facebook Setting",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

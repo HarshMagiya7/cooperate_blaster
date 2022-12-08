@@ -1,0 +1,15 @@
+:root{
+--control-bg:#f8dbff;
+}
+
+body {
+    --bg-light-gray: #6c227d;
+    
+}
+.navbar-light{background-color:#6c227d;border-bottom:0;}
+.for-email-login .page-card .page-card-body input[type=email], .for-email-login .page-card .page-card-body input[type=password], .for-email-login .page-card .page-card-body input[type=text], .for-forgot>
+.for-email-login .page-card{backdrop-filter: blur(10px); background-color: hsla(0,0%,100%,.8) !important; border: 1px solid rgb(226 232 240/1);}
+.btn.btn-primary{--primary:#6c227d;}.btn-group-sm>.btn, .btn-sm, .btn-xs{padding: 0.45rem 0.5rem;}.btn-primary.focus, .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-pr>
+    border-color: #9530ac;}
+.web-footer,.navbar{display:none !important;}.my-4{margin-bottom:0 !important;}
+

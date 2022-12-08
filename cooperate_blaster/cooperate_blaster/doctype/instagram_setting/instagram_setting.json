@@ -1,0 +1,122 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:acc_name",
+ "creation": "2022-07-04 10:44:10.337100",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "account_name",
+  "page_details",
+  "acc_name",
+  "fb_page_id",
+  "insta_id",
+  "short_lived_access_token",
+  "app_detail",
+  "app_id",
+  "column_break_9",
+  "app_secret",
+  "long_lived_access_token",
+  "session_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_name",
+   "fieldtype": "Data",
+   "label": "Account Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "page_details",
+   "fieldtype": "Section Break",
+   "label": "Page info"
+  },
+  {
+   "fieldname": "acc_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Account name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "fb_page_id",
+   "fieldtype": "Data",
+   "label": "Facebook Page ID"
+  },
+  {
+   "fieldname": "insta_id",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Insta Account ID"
+  },
+  {
+   "fieldname": "short_lived_access_token",
+   "fieldtype": "Small Text",
+   "label": "Access token",
+   "reqd": 1
+  },
+  {
+   "fieldname": "app_detail",
+   "fieldtype": "Section Break",
+   "label": "APP detail"
+  },
+  {
+   "fieldname": "app_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "App ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "app_secret",
+   "fieldtype": "Password",
+   "label": "App secret",
+   "reqd": 1
+  },
+  {
+   "fieldname": "long_lived_access_token",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "Permanent token"
+  },
+  {
+   "fieldname": "session_status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Session Status",
+   "options": "Expired\nActive",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-11-21 14:57:57.057614",
+ "modified_by": "Administrator",
+ "module": "Cooperate Blaster",
+ "name": "Instagram Setting",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

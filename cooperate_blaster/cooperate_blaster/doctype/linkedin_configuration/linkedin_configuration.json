@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-11-17 16:30:54.985679",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "image_section",
+  "dimensionresolution",
+  "min_img_height",
+  "min_img_width",
+  "max_img_height",
+  "max_img_width",
+  "column_break_4",
+  "img_format",
+  "img_size",
+  "video_section",
+  "dimension_resolution",
+  "min_vid_height",
+  "min_vid_width",
+  "max_vid_height",
+  "max_vid_width",
+  "column_break_16",
+  "vid_format",
+  "vid_size",
+  "min_vid_dur",
+  "max_vid_dur"
+ ],
+ "fields": [
+  {
+   "fieldname": "image_section",
+   "fieldtype": "Section Break",
+   "label": "Image"
+  },
+  {
+   "fieldname": "dimensionresolution",
+   "fieldtype": "Heading",
+   "label": "Dimension(Resolution)"
+  },
+  {
+   "fieldname": "min_img_height",
+   "fieldtype": "Data",
+   "label": "Minimun Height"
+  },
+  {
+   "fieldname": "min_img_width",
+   "fieldtype": "Data",
+   "label": "Minimum Width"
+  },
+  {
+   "fieldname": "max_img_height",
+   "fieldtype": "Data",
+   "label": "Maximum Height"
+  },
+  {
+   "fieldname": "max_img_width",
+   "fieldtype": "Data",
+   "label": "Maximum Width"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "img_format",
+   "fieldtype": "Data",
+   "label": "Image Format"
+  },
+  {
+   "fieldname": "img_size",
+   "fieldtype": "Data",
+   "label": "Image Size"
+  },
+  {
+   "fieldname": "video_section",
+   "fieldtype": "Section Break",
+   "label": "Video"
+  },
+  {
+   "fieldname": "dimension_resolution",
+   "fieldtype": "Heading",
+   "label": "Dimension (Resolution)"
+  },
+  {
+   "fieldname": "min_vid_height",
+   "fieldtype": "Data",
+   "label": "Minimum Height"
+  },
+  {
+   "fieldname": "min_vid_width",
+   "fieldtype": "Data",
+   "label": "Minimum Width"
+  },
+  {
+   "fieldname": "max_vid_height",
+   "fieldtype": "Data",
+   "label": "Maximum Height"
+  },
+  {
+   "fieldname": "max_vid_width",
+   "fieldtype": "Data",
+   "label": "Maximum Width"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vid_format",
+   "fieldtype": "Data",
+   "label": "Video Format"
+  },
+  {
+   "fieldname": "vid_size",
+   "fieldtype": "Data",
+   "label": "Video Size"
+  },
+  {
+   "fieldname": "min_vid_dur",
+   "fieldtype": "Duration",
+   "label": "Min Video Duration"
+  },
+  {
+   "fieldname": "max_vid_dur",
+   "fieldtype": "Duration",
+   "label": "Max Video Duration"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-11-21 14:56:36.578440",
+ "modified_by": "Administrator",
+ "module": "Cooperate Blaster",
+ "name": "Linkedin Configuration",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

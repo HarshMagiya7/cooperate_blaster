@@ -1,0 +1,260 @@
+{
+ "actions": [],
+ "autoname": "format: SP-{YYYY}-{MM}-{DD}-{###}",
+ "creation": "2022-07-21 00:15:56.051287",
+ "doctype": "DocType",
+ "documentation": "https://docs.erpnext.com/docs/user/manual/en/CRM/social-media-post",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "scheduled_time",
+  "post_status",
+  "column_break_6",
+  "facebook",
+  "instagram",
+  "linkedin",
+  "section_fb",
+  "text",
+  "column_break_11",
+  "page_name",
+  "fb_link",
+  "whatsapp_button",
+  "whatsapp_button_label",
+  "section_insta",
+  "caption",
+  "column_break_16",
+  "acc_name",
+  "linkedin_section",
+  "linkedin_post",
+  "column_break_20",
+  "link_page_name",
+  "section_attachment",
+  "media_type",
+  "media",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "scheduled_time",
+   "fieldtype": "Datetime",
+   "label": "Scheduled Time",
+   "read_only_depends_on": "eval:doc.post_status == \"Posted\""
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "post_status",
+   "fieldtype": "Select",
+   "label": "Post Status",
+   "no_copy": 1,
+   "options": "\nScheduled\nPosted\nCancelled\nDeleted\nError",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "facebook",
+   "fieldtype": "Check",
+   "label": "Facebook"
+  },
+  {
+   "default": "0",
+   "fieldname": "instagram",
+   "fieldtype": "Check",
+   "label": "Instagram"
+  },
+  {
+   "default": "0",
+   "fieldname": "linkedin",
+   "fieldtype": "Check",
+   "label": "LinkedIn"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.facebook ==1",
+   "fieldname": "section_fb",
+   "fieldtype": "Section Break",
+   "label": "Facebook"
+  },
+  {
+   "fieldname": "text",
+   "fieldtype": "Text",
+   "label": "Description",
+   "mandatory_depends_on": "eval:doc.facebook ==1"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "page_name",
+   "fieldtype": "Link",
+   "label": "Facebook page",
+   "mandatory_depends_on": "eval:doc.facebook ==1",
+   "options": "Facebook Setting"
+  },
+  {
+   "depends_on": "eval:doc.media_type ==\"\"",
+   "fieldname": "fb_link",
+   "fieldtype": "Data",
+   "label": "Link url"
+  },
+  {
+   "default": "0",
+   "fieldname": "whatsapp_button",
+   "fieldtype": "Check",
+   "label": "Whatsapp Button"
+  },
+  {
+   "depends_on": "eval:doc.whatsapp_button ==1",
+   "fieldname": "whatsapp_button_label",
+   "fieldtype": "Data",
+   "label": "Button Label",
+   "mandatory_depends_on": "eval:doc.whatsapp_button ==1"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.instagram == 1",
+   "fieldname": "section_insta",
+   "fieldtype": "Section Break",
+   "label": "Instagram"
+  },
+  {
+   "fieldname": "caption",
+   "fieldtype": "Text",
+   "label": "Caption",
+   "mandatory_depends_on": "eval:doc.instagram == 1"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "acc_name",
+   "fieldtype": "Link",
+   "label": "Instagram account",
+   "mandatory_depends_on": "eval:doc.instagram == 1",
+   "options": "Instagram Setting"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:doc.linkedin==1",
+   "fieldname": "linkedin_section",
+   "fieldtype": "Section Break",
+   "label": "LinkedIn"
+  },
+  {
+   "fieldname": "linkedin_post",
+   "fieldtype": "Text",
+   "label": "Post",
+   "mandatory_depends_on": "eval:doc.linkedin ==1"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "link_page_name",
+   "fieldtype": "Link",
+   "label": "LinkedIn Page",
+   "mandatory_depends_on": "eval:doc.linkedin ==1",
+   "options": "LinkedIn Setting"
+  },
+  {
+   "fieldname": "section_attachment",
+   "fieldtype": "Section Break",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "media_type",
+   "fieldtype": "Select",
+   "label": "Media Type",
+   "mandatory_depends_on": "eval:doc.instagram || doc.whatsapp_button",
+   "options": "\nIMAGE\nVIDEO"
+  },
+  {
+   "depends_on": "eval:doc.media_type",
+   "fieldname": "media",
+   "fieldtype": "Attach",
+   "label": "Media",
+   "mandatory_depends_on": "eval:doc.media_type"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Social Post",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-11-21 14:57:12.512489",
+ "modified_by": "Administrator",
+ "module": "Cooperate Blaster",
+ "name": "Social Post",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}
