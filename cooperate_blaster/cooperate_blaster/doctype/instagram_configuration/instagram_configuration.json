@@ -41,22 +41,22 @@
   },
   {
    "fieldname": "min_img_height",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Minimun Height"
   },
   {
    "fieldname": "min_img_width",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Minimum Width"
   },
   {
    "fieldname": "max_img_height",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Maximum Height"
   },
   {
    "fieldname": "max_img_width",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Maximum Width"
   },
   {
@@ -70,7 +70,7 @@
   },
   {
    "fieldname": "img_size",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Image Size"
   },
   {
@@ -85,22 +85,22 @@
   },
   {
    "fieldname": "min_vid_height",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Minimum Height"
   },
   {
    "fieldname": "min_vid_width",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Minimum Width"
   },
   {
    "fieldname": "max_vid_height",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Maximum Height"
   },
   {
    "fieldname": "max_vid_width",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Maximum Width"
   },
   {
@@ -114,7 +114,7 @@
   },
   {
    "fieldname": "vid_size",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Video Size"
   },
   {
@@ -131,7 +131,7 @@
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2022-11-21 14:56:21.001087",
+ "modified": "2022-12-20 00:41:54.647311",
  "modified_by": "Administrator",
  "module": "Cooperate Blaster",
  "name": "Instagram Configuration",
