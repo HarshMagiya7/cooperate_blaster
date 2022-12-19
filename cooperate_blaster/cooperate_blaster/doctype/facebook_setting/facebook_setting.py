@@ -84,7 +84,7 @@ class FacebookSetting(Document):
 #		print('\n\n\n\n')
 #		print(text)
 		fb_page = frappe.get_doc('Facebook Setting',page)
-		if not media:
+		if not media_type:
 			print('no media\n\n\n\n')
 			print(fb_page.page_id)
 			post_url = 'https://graph.facebook.com/{}/feed'.format(fb_page.page_id)

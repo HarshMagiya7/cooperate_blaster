@@ -14,6 +14,7 @@
   "max_img_height",
   "max_img_width",
   "column_break_4",
+  "doc_status",
   "img_format",
   "img_size",
   "video_section",
@@ -126,12 +127,18 @@
    "fieldname": "max_vid_dur",
    "fieldtype": "Duration",
    "label": "Max Video Duration"
+  },
+  {
+   "default": "0",
+   "fieldname": "doc_status",
+   "fieldtype": "Check",
+   "label": "Enable"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2022-11-22 16:07:14.577497",
+ "modified": "2022-12-09 15:04:52.966430",
  "modified_by": "Administrator",
  "module": "Cooperate Blaster",
  "name": "Facebook Configuration",

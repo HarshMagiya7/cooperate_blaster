@@ -96,7 +96,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-11-21 14:57:23.923725",
+ "modified": "2022-12-09 01:16:35.304928",
  "modified_by": "Administrator",
  "module": "Cooperate Blaster",
  "name": "Facebook Setting",
@@ -112,6 +112,22 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Facebook Master",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "role": "Facebook User",
+   "select": 1
   }
  ],
  "sort_field": "modified",
