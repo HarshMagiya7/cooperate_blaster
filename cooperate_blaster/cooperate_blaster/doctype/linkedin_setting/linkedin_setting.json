@@ -8,6 +8,7 @@
  "field_order": [
   "page_name",
   "account_name",
+  "account_type",
   "company_id",
   "column_break_2",
   "access_token",
@@ -34,10 +35,11 @@
    "unique": 1
   },
   {
+   "depends_on": "eval:doc.account_type  == 'BUSINESS PAGE'",
    "fieldname": "company_id",
    "fieldtype": "Data",
    "label": "Company ID",
-   "reqd": 1
+   "mandatory_depends_on": "eval:doc.account_type  == 'BUSINESS PAGE'"
   },
   {
    "fieldname": "column_break_2",
@@ -91,10 +93,16 @@
    "label": "Session Status",
    "options": "Expired\nActive",
    "read_only": 1
+  },
+  {
+   "fieldname": "account_type",
+   "fieldtype": "Select",
+   "label": "Account Type",
+   "options": "PERSONAL ACCOUNT\nBUSINESS PAGE"
   }
  ],
  "links": [],
- "modified": "2022-12-09 01:15:49.858145",
+ "modified": "2022-12-21 23:18:03.505569",
  "modified_by": "Administrator",
  "module": "Cooperate Blaster",
  "name": "LinkedIn Setting",

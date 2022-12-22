@@ -25,7 +25,8 @@ class LinkedInSetting(Document):
 		print(response)
 
 		self.person_urn = response["id"]
-		self.account_name= response["vanityName"]
+		if self.account_type == 'BUSINESS PAGE':
+			self.account_name= response["vanityName"]
 		self.session_status= "Active"
 		frappe.db.commit()
 
@@ -34,17 +35,104 @@ class LinkedInSetting(Document):
 #		frappe.local.response["location"] = get_url_to_form("LinkedIn Settings", "LinkedIn Settings")
 
 	def post(self, text, title, media=None):
-		if not media:
-			return self.post_text(text, title)
-		else:
-			media_id = self.upload_image(media)
 
-			if media_id:
-				return self.post_text(text, title, media_id=media_id)
+		if self.account_type == 'BUSINESS PAGE':
+
+			if not media:
+				return self.business_post(text, title)
 			else:
-				frappe.log_error("Failed to upload media.", "LinkedIn Upload Error")
+				media_id = self.page_upload_image(media)
 
-	def upload_image(self, media):
+				if media_id:
+					return self.business_post(text, title, media_id=media_id)
+				else:
+					frappe.log_error("Failed to upload media.", "LinkedIn Upload Error")
+
+		else:
+			if not media:
+				return self.account_post(text,title)
+
+			else:
+				media_id = self.account_upload_image(media)
+				if media_id:
+					return self.account_post(text, title, media_id=media_id)
+				else:
+					frappe.log_error("Failed to upload media.", "LinkedIn Upload Error")
+
+	def account_post(self, text, title, media_id=None):
+		url = "https://api.linkedin.com/v2/ugcPosts"
+		headers = self.get_headers()
+		headers['Content-Type'] = 'application/json'
+
+		body = {
+			"author": "urn:li:person:{0}".format(self.person_urn),
+			"lifecycleState": "PUBLISHED",
+			"visibility": {
+				"com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
+			},
+
+			"specificContent": {
+				"com.linkedin.ugc.ShareContent": {
+					"shareCommentary": {
+						"text": text
+					}
+				}
+			}
+		}
+
+
+		if media_id:
+			body["specificContent"]["com.linkedin.ugc.ShareContent"]["shareMediaCategory"] = "IMAGE"
+			body["specificContent"]["com.linkedin.ugc.ShareContent"]["media"] = [{"status":"READY","media":media_id}]
+		else:
+			body["specificContent"]["com.linkedin.ugc.ShareContent"]["shareMediaCategory"] = "NONE"
+
+		print(body)
+		print(headers)
+		response = self.http_post(url=url, headers=headers, body=body)
+		return response
+
+
+	def account_upload_image(self,media):
+		media = get_file_path(media)
+		register_url = "https://api.linkedin.com/v2/assets?action=registerUpload"
+		body = {
+			"registerUploadRequest": {
+				"recipes": ["urn:li:digitalmediaRecipe:feedshare-image"],
+				"owner": "urn:li:person:{0}".format(self.person_urn),
+				"serviceRelationships": [
+					{"relationshipType": "OWNER", "identifier": "urn:li:userGeneratedContent"}
+				],
+			}
+		}
+
+		headers = self.get_headers()
+		response = self.http_post(url=register_url, body=body, headers=headers)
+		if response.status_code == 200:
+			response = response.json()
+			asset = response["value"]["asset"]
+			upload_url = response["value"]["uploadMechanism"][
+				"com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest"
+			]["uploadUrl"]
+#			headers["Content-Type"] =  "application/json"
+			print(upload_url)
+			print('\n\n')
+			print(headers)
+			print('\n\n')
+			print(open(media,"rb").read()[0:10])
+			response = self.http_post(upload_url, headers=headers, data=open(media, "rb").read())
+			if response.status_code < 200 and response.status_code > 299:
+				frappe.throw(
+					_("Error While Uploading Image"),
+					title="{0} {1}".format(response.status_code, response.reason),
+				)
+				return None
+			return asset
+
+		return None
+
+
+	def page_upload_image(self, media):
 		media = get_file_path(media)
 		register_url = "https://api.linkedin.com/v2/assets?action=registerUpload"
 		body = {
@@ -53,7 +141,7 @@ class LinkedInSetting(Document):
 				"owner": "urn:li:organization:{0}".format(self.company_id),
 				"serviceRelationships": [
 					{"relationshipType": "OWNER", "identifier": "urn:li:userGeneratedContent"}
-				],
+				]
 			}
 		}
 		headers = self.get_headers()
@@ -77,7 +165,7 @@ class LinkedInSetting(Document):
 
 		return None
 
-	def post_text(self, text, title, media_id=None):
+	def business_post(self, text, title, media_id=None):
 		url = "https://api.linkedin.com/v2/shares"
 		headers = self.get_headers()
 		headers["X-Restli-Protocol-Version"] = "2.0.0"

@@ -25,7 +25,10 @@ class SocialPost(Document):
 			scheduled_time = frappe.utils.get_datetime(self.scheduled_time)
 			if scheduled_time < current_time:
 				frappe.throw(_("Scheduled Time must be a future time"))
-		if self.media:
+		if self.linkedin and self.media_type == 'VIDEO':
+			frappe.throw(_('On LinkedIn only image media type is allowed'))
+
+		if self.media_type:
 			self.media_name_checker(self.media)
 			self.media_validation()
 	def submit(self):
@@ -54,7 +57,7 @@ class SocialPost(Document):
 
 		if self.linkedin:
 #			in_config = frappe.get_doc('Linkedin Comfigutayion')
-			channels.append('Linkedin Comfigutayion')
+			channels.append('Linkedin Configuration')
 
 		if self.media_type =='IMAGE':
 			width, height, size, format = self.get_image_properties(media)
@@ -144,7 +147,7 @@ class SocialPost(Document):
 			if self.linkedin:
 				linkedin = frappe.get_doc("LinkedIn Setting",self.link_page_name)
 				linkedin_post = linkedin.post(self.linkedin_post, self.title, self.media)
-				print(f'\n\n\n\n{linkedin_post.headers["X-RestLi-Id"]}\n\n\n\n')
+				print(f'\n\n\n\n{linkedin_post}\n\n\n\n')
 			self.db_set("post_status", "Posted")
 
 		except Exception as e:
