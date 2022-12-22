@@ -63,7 +63,7 @@ class SocialPost(Document):
 		for channel in channels:
 			status = frappe.db.get_single_value(channel,'doc_status')
 			if not status:
-				frappe.throw(_(f'{channel} is not enabled by ADMIN')
+				frappe.throw(_(f'{channel} is not enabled by ADMIN'))
 
 
 		if self.media_type =='IMAGE':
