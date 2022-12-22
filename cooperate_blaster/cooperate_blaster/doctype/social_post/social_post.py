@@ -59,6 +59,13 @@ class SocialPost(Document):
 #			in_config = frappe.get_doc('Linkedin Comfigutayion')
 			channels.append('Linkedin Configuration')
 
+
+		for channel in channels:
+			status = frappe.db.get_single_value(channel,'doc_status')
+			if not status:
+				frappe.throw(_(f'{channel} is not enabled by ADMIN')
+
+
 		if self.media_type =='IMAGE':
 			width, height, size, format = self.get_image_properties(media)
 			self.image_validator(width, height, size, format, channels)

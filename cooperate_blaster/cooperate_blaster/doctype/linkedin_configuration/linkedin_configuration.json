@@ -14,6 +14,7 @@
   "max_img_height",
   "max_img_width",
   "column_break_4",
+  "doc_status",
   "img_format",
   "img_size",
   "video_section",
@@ -126,12 +127,18 @@
    "fieldname": "max_vid_dur",
    "fieldtype": "Duration",
    "label": "Max Video Duration"
+  },
+  {
+   "default": "0",
+   "fieldname": "doc_status",
+   "fieldtype": "Check",
+   "label": "Enable"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2022-12-20 00:55:01.952061",
+ "modified": "2022-12-22 15:34:04.862858",
  "modified_by": "Administrator",
  "module": "Cooperate Blaster",
  "name": "Linkedin Configuration",
